@@ -10,7 +10,8 @@ sed -i -e 's/GO_SERVER=.*/GO_SERVER='$GO_SERVER'/' /etc/default/go-agent
 sed -i -e 's/GO_SERVER_URL=.*/GO_SERVER_URL=https:\/\/'$GO_SERVER'\/go\//' /etc/default/go-agent
 
 mkdir -p /var/lib/go-agent/config
-chown go /var/lib/go-agent/config
+chown go:go /var/lib/go-agent/config
+chown -R go:go /var/go/.ssh
 
 /bin/rm -f /var/lib/go-agent/config/autoregister.properties
 
